@@ -1,11 +1,28 @@
-# NihonTerebi 
+# nihonterebi-cli
 
-Program for watch Japanese tv from terminal cli. 
-
+Watch japanesetv for japanese leaner's
 
 # How to install:
 
+```bash
+git clone @thisrepositore
+```
 
-## Dependencies: 
+## Dependencies:
+
+For **ArchLinux**:
+
+```bash
+sudo pacman -S mpv python-inquirer
+yay -S youtube-dl yt-dlp
+
+```
+
+For Windows:
+```bash
+pip install mpv inquirer youtube-dl yt-dlp
+
+
+```
 
 
