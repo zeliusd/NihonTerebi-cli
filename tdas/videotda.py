@@ -1,4 +1,4 @@
-import subprocess
+from mpv import *
 
 ERROR_01 = "Did you select a bangumi?"
 ERROR_02 = "Did you select a quality video?"
@@ -14,30 +14,25 @@ class Video:
 
     def playVideo(self):
 
-        command = f'mpv --ytdl-format="bestvideo[height<={self.quality}][fps<=30][vcodec!=vp9]+bestaudio/best" {self.videoUrl}'
-        try:
-            self.process = subprocess.Popen(
-                command,
-                shell=True,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            print("El video se está reproduciendo en segundo plano.")
-        except Exception as e:
-            print(f"El comando falló con la excepción: {e}")
+        player = MPV(ytdl=True)
+        player = MPV(input_default_bindings=True, input_vo_keyboard=True, osc=True)
+        player = MPV(
+            player_operation_mode="pseudo-gui",
+            script_opts="osc-layout=box,osc-seekbarstyle=bar,osc-deadzonesize=0,osc-minmousemove=3",
+            input_default_bindings=True,
+            input_vo_keyboard=True,
+            osc=True,
+        )
+
+        player.play(self.videoUrl)
+        # player.wait_for_playback()
 
     def stopVideo(self):
         if not self.process:
             print(ERROR_03)
             return
 
-        self.process.terminate()
-        try:
-            self.process.wait(timeout=5)
-            print("El video ha sido detenido.")
-        except subprocess.TimeoutExpired:
-            self.process.kill()
-            print("El video ha sido forzado a detenerse.")
+        return
 
 
 def create_video(videoUrl, bangumiName, quality):

@@ -1,6 +1,5 @@
 import subprocess
 import sys
-from run import *
 
 
 def install_requirements():
@@ -14,6 +13,9 @@ def install_requirements():
 
 
 def main():
+
+    from run import Run
+
     # Aquí va tu código principal
     print("Dependencias instaladas. Ejecutando el programa principal...")
     # Ejemplo: import tu_modulo_principal

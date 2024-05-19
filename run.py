@@ -8,7 +8,7 @@ def Run():
     m = Menu()
     m.Open()
     os.system("clear")
-    m.Quality()
+    # m.Quality()
 
     v = Video(m.selectUrl, m.selectName, m.selectQuality)
 
@@ -18,5 +18,3 @@ def Run():
 
     if m.playingMenu():
         v.stopVideo()
-
-
