@@ -1,7 +1,6 @@
 # nihonterebi-cli
 
-Watch japanesetv for japanese leaner's
-
+Watch japanesetv 
 # How to install:
 
 ```bash
