@@ -7,8 +7,6 @@ Watch japanesetv
 git clone @thisrepositore
 ```
 
-## Dependencies:
-
 For **ArchLinux**:
 
 ```bash
